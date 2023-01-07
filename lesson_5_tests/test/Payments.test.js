@@ -12,11 +12,11 @@ describe("Payments", function () {
     payments = await Payments.deploy()
     await payments.deployed()
   })
-
+//проверка адрес контракта правильный
   it("should be deployed", async function() {
     expect(payments.address).to.be.properAddress
   })
-
+// проверка, что изначально баланс 0
   it("should have 0 ether by default", async function() {
     const balance = await payments.currentBalance()
     expect(balance).to.eq(0)
